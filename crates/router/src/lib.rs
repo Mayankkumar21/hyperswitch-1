@@ -57,6 +57,7 @@ pub mod headers {
     pub const X_TRANS_KEY: &str = "X-Trans-Key";
     pub const X_VERSION: &str = "X-Version";
     pub const X_DATE: &str = "X-Date";
+    pub const ORG_ID: &str = "X-Forte-Auth-Organization-Id";
 }
 
 pub mod pii {

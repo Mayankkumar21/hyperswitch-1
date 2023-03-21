@@ -13,6 +13,7 @@ pub(crate) struct ConnectorAuthentication {
     pub cybersource: Option<SignatureKey>,
     pub dlocal: Option<SignatureKey>,
     pub fiserv: Option<SignatureKey>,
+    pub forte: Option<HeaderKey>,
     pub globalpay: Option<HeaderKey>,
     pub mollie: Option<HeaderKey>,
     pub multisafepay: Option<HeaderKey>,
@@ -30,7 +31,7 @@ impl ConnectorAuthentication {
     pub(crate) fn new() -> Self {
         #[allow(clippy::expect_used)]
         toml::from_str(
-            &std::fs::read_to_string("tests/connectors/auth.toml")
+            &std::fs::read_to_string("tests/connectors/sample_auth.toml")
                 .expect("connector authentication config file not found"),
         )
         .expect("Failed to read connector authentication config file")
